@@ -417,7 +417,3 @@ For issues or questions:
 ## License
 
 ISC
-
-## Credits
-
-Built for Boy Scouts of America Merit Badge Counselor applications.
