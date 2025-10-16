@@ -1,6 +1,6 @@
 # Merit Badge Counselor Application
 
-A full-stack web application for managing Merit Badge Counselor applications for the Boy Scouts of America.
+A full-stack web application for managing Merit Badge Counselor applications for the Longhorn Council.
 
 ## Features
 
