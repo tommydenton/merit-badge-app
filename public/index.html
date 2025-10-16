@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merit Badge Counselor Application</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Select2 CSS for multi-select dropdowns -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+
+                <!-- Header -->
+                <div class="text-center mb-4">
+                    <h1 class="display-5 fw-bold text-primary">Merit Badge Counselor Application</h1>
+                    <p class="lead text-muted">Complete this form to apply to become a Merit Badge Counselor</p>
+                    <div class="alert alert-info">
+                        <strong>Note:</strong> Applicants must be at least 18 years old and complete mandatory training.
+                    </div>
+                </div>
+
+                <!-- Application Form -->
+                <form id="applicationForm" class="needs-validation" novalidate>
+
+                    <!-- Section 1: Personal Information -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Personal Information</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label">First Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                    <div class="invalid-feedback">Please enter your first name.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label">Last Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                    <div class="invalid-feedback">Please enter your last name.</div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <label for="age" class="form-label">Age <span class="text-danger">*</span></label>
+                                    <input type="number" class="form-control" id="age" name="age" min="18" required>
+                                    <div class="invalid-feedback">You must be at least 18 years old.</div>
+                                </div>
+                                <div class="col-md-8">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="(555) 555-5555">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Volunteer Status -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">BSA Volunteer Status</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="isVolunteer" class="form-label">Currently Registered as BSA Volunteer? <span class="text-danger">*</span></label>
+                                <select class="form-select" id="isVolunteer" name="isVolunteer" required>
+                                    <option value="">Select an option</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                                <div class="invalid-feedback">Please select your volunteer status.</div>
+                                <div id="noVolunteerAlert" class="alert alert-warning mt-3" style="display: none;">
+                                    <strong>Not registered?</strong> Please visit your district registration page to register as a BSA volunteer before proceeding.
+                                </div>
+                            </div>
+
+                            <div id="volunteerFields" style="display: none;">
+                                <div class="mb-3">
+                                    <label for="bsaMemberId" class="form-label">BSA Member ID Number <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="bsaMemberId" name="bsaMemberId">
+                                    <div class="invalid-feedback">Please enter your BSA Member ID.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="district" class="form-label">District <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="district" name="district">
+                                        <option value="">Select your district</option>
+                                        <option value="Arrowhead">Arrowhead</option>
+                                        <option value="Brazos Valley">Brazos Valley</option>
+                                        <option value="Chisholm Trail">Chisholm Trail</option>
+                                        <option value="Exploring">Exploring</option>
+                                        <option value="Frontier Trails">Frontier Trails</option>
+                                        <option value="Heart O Texas">Heart O Texas</option>
+                                        <option value="Leon Valley">Leon Valley</option>
+                                        <option value="Lone Star">Lone Star</option>
+                                        <option value="Mustang">Mustang</option>
+                                        <option value="Orion">Orion</option>
+                                        <option value="Pathfinder">Pathfinder</option>
+                                        <option value="Santa Fe">Santa Fe</option>
+                                        <option value="Trinity Trails">Trinity Trails</option>
+                                        <option value="Woodbine Trail">Woodbine Trail</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select your district.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Application Purpose -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Application Purpose</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="purpose" class="form-label">What would you like to do? <span class="text-danger">*</span></label>
+                                <select class="form-select" id="purpose" name="purpose" required>
+                                    <option value="">Select an option</option>
+                                    <option value="Become a Counselor">Become a Counselor</option>
+                                    <option value="Drop Badges">Drop Badges</option>
+                                    <option value="Change/Add Badges">Change/Add Badges</option>
+                                    <option value="Update Certifications">Update Certifications</option>
+                                    <option value="Questions">Questions</option>
+                                    <option value="No Longer Serve">No Longer Serve</option>
+                                </select>
+                                <div class="invalid-feedback">Please select what you would like to do.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Merit Badge Selection -->
+                    <div class="card mb-4" id="badgeSelectionSection">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Merit Badge Selection</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3" id="counselBadgesDiv" style="display: none;">
+                                <label for="badgesToCounsel" class="form-label">Merit Badges to Counsel</label>
+                                <select class="form-select" id="badgesToCounsel" name="badgesToCounsel" multiple>
+                                    <!-- Options loaded dynamically -->
+                                </select>
+                                <div class="form-text">Hold Ctrl (Windows) or Cmd (Mac) to select multiple badges</div>
+                            </div>
+
+                            <div class="mb-3" id="dropBadgesDiv" style="display: none;">
+                                <label for="badgesToDrop" class="form-label">Merit Badges to Drop</label>
+                                <select class="form-select" id="badgesToDrop" name="badgesToDrop" multiple>
+                                    <!-- Options loaded dynamically -->
+                                </select>
+                                <div class="form-text">Hold Ctrl (Windows) or Cmd (Mac) to select multiple badges</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 5: Qualifications -->
+                    <div class="card mb-4" id="qualificationsSection" style="display: none;">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Qualifications & Certifications</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="qualifications" class="form-label">Qualifications</label>
+                                <textarea class="form-control" id="qualifications" name="qualifications" rows="4" placeholder="Tell us why you are qualified to counsel these badges"></textarea>
+                                <div class="form-text">Describe your experience, training, or expertise related to the merit badges you selected</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="certifications" class="form-label">Upload Certifications <span class="text-danger">*</span></label>
+                                <input type="file" class="form-control" id="certifications" name="certifications" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" required>
+                                <div class="form-text">
+                                    Upload up to 10 files (max 30MB total). Accepted formats: PDF, JPG, PNG, DOC, DOCX<br>
+                                    Executable files (.exe, .bat, etc.) are not allowed for security reasons.
+                                </div>
+                                <div class="invalid-feedback">Please upload your certifications.</div>
+                                <div id="fileList" class="mt-2"></div>
+                                <div id="fileSizeError" class="text-danger mt-2" style="display: none;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 6: Additional Information -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Additional Information</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="additionalInfo" class="form-label">Additional Comments or Questions</label>
+                                <textarea class="form-control" id="additionalInfo" name="additionalInfo" rows="4" placeholder="Any additional information you'd like to share"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="d-grid gap-2 mb-4">
+                        <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+                            <span id="submitText">Submit Application</span>
+                            <span id="submitSpinner" class="spinner-border spinner-border-sm ms-2" style="display: none;"></span>
+                        </button>
+                    </div>
+
+                    <!-- Alert Messages -->
+                    <div id="alertContainer"></div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+</body>
+</html>

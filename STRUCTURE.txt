@@ -1,0 +1,28 @@
+.
+├── config
+│   └── database.js
+├── CONFIGURATION_CHECKLIST.md
+├── database
+│   ├── schema.sql
+│   ├── seed_districts.sql
+│   └── seed_merit_badges.sql
+├── models
+│   └── Application.js
+├── NAMECHEAP_DEPLOYMENT.md
+├── package.json
+├── PROJECT_SUMMARY.md
+├── public
+│   ├── css
+│   │   └── style.css
+│   ├── index.html
+│   ├── js
+│   │   └── app.js
+│   └── uploads
+├── README.md
+├── routes
+│   └── applications.js
+├── server.js
+├── setup.sh
+└── STRUCTURE.txt
+
+9 directories, 17 files

@@ -1,0 +1,21 @@
+-- Seed Districts Data
+-- These are the 14 districts from the form
+
+-- Note: Districts are stored as VARCHAR in applications table
+-- This file is for reference of valid district names
+
+-- Valid Districts:
+-- Arrowhead
+-- Brazos Valley
+-- Chisholm Trail
+-- Exploring
+-- Frontier Trails
+-- Heart O Texas
+-- Leon Valley
+-- Lone Star
+-- Mustang
+-- Orion
+-- Pathfinder
+-- Santa Fe
+-- Trinity Trails
+-- Woodbine Trail
