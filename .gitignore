@@ -1,6 +1,140 @@
-node_modules/
+# ============================================================================
+# MERIT BADGE APP GITIGNORE
+# ============================================================================
+# This gitignore protects sensitive data and excludes generated/cache files
+# from the merit badge application repository.
+#
+# Last updated: 2026-01-01
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# SECTION 1: OPERATING SYSTEM FILES
+# ----------------------------------------------------------------------------
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ----------------------------------------------------------------------------
+# SECTION 2: IDE AND EDITOR FILES
+# ----------------------------------------------------------------------------
+# VS Code
+.vscode/
+
+# JetBrains (IntelliJ, WebStorm, etc.)
+.idea/
+
+# Vim/Neovim
+*.swp
+*.swo
+*.swn
+*~
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+.#*
+
+# ----------------------------------------------------------------------------
+# SECTION 3: BACKUP AND TEMPORARY FILES
+# ----------------------------------------------------------------------------
+*.bak
+*.backup
+*.backup.*
+*.old
+*.orig
+*.tmp
+tmp/
+.tmp/
+
+# ----------------------------------------------------------------------------
+# SECTION 4: LOGS
+# ----------------------------------------------------------------------------
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ----------------------------------------------------------------------------
+# SECTION 5: CACHE DIRECTORIES
+# ----------------------------------------------------------------------------
+cache/
+.cache/
+.npm/
+
+# ----------------------------------------------------------------------------
+# SECTION 6: SECRETS AND SENSITIVE DATA
+# ----------------------------------------------------------------------------
+# Environment files - CRITICAL: NEVER COMMIT THESE
 .env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# Keep the example file
+!.env.example
+
+# Private keys and certificates
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# ----------------------------------------------------------------------------
+# SECTION 7: NODE.JS
+# ----------------------------------------------------------------------------
+node_modules/
+package-lock.json
+yarn.lock
+.npm/
+
+# ----------------------------------------------------------------------------
+# SECTION 8: BUILD ARTIFACTS
+# ----------------------------------------------------------------------------
+dist/
+build/
+*.min.js
+*.min.css
+
+# ----------------------------------------------------------------------------
+# SECTION 9: DATABASES
+# ----------------------------------------------------------------------------
+*.sqlite3
+*.sqlite
+*.db
+*.db-shm
+*.db-wal
+
+# ----------------------------------------------------------------------------
+# SECTION 10: RUNTIME FILES
+# ----------------------------------------------------------------------------
+*.pid
+*.socket
+*.sock
+
+# ----------------------------------------------------------------------------
+# SECTION 11: PROJECT-SPECIFIC EXCLUSIONS
+# ----------------------------------------------------------------------------
+# Uploaded files (user content)
 public/uploads/*
 !public/uploads/.gitkeep
-.DS_Store
-npm-debug.log
+
+# Apache/htaccess (keep example)
+.htaccess
+!.htaccess.example
